@@ -1,388 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>A Witness Unto All Nations</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: Georgia, 'Times New Roman', serif;
-      color: #222;
-      background: #fff;
-    }
-
-    /* NAV */
-    nav {
-      background: #1a1a2e;
-      padding: 0 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    nav .logo {
-      padding: 0.75rem 0;
-    }
-
-    nav .logo img {
-      height: 60px;
-      display: block;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0;
-    }
-
-    nav ul li a {
-      display: block;
-      color: #ccc;
-      text-decoration: none;
-      padding: 1rem 1.1rem;
-      font-family: Arial, sans-serif;
-      font-size: 0.85rem;
-      letter-spacing: 0.03em;
-      transition: background 0.2s, color 0.2s;
-    }
-
-    nav ul li a:hover {
-      background: #2d2d50;
-      color: #fff;
-    }
-
-    /* HERO */
-    .hero {
-      background: linear-gradient(135deg, #1a1a2e 0%, #2d2d50 100%);
-      color: #fff;
-      text-align: center;
-      padding: 5rem 2rem 4rem;
-    }
-
-    .hero h1 {
-      font-size: 1rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: #aaa;
-      margin-bottom: 1rem;
-    }
-
-    .hero p {
-      max-width: 680px;
-      margin: 0 auto;
-      font-size: 1.05rem;
-      line-height: 1.8;
-      color: #ddd;
-    }
-
-    /* SECTION TITLE */
-    .section-title {
-      text-align: center;
-      padding: 3rem 1rem 1rem;
-    }
-
-    .section-title h2 {
-      font-size: 1.6rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #1a1a2e;
-      display: inline-flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .section-title h2::before,
-    .section-title h2::after {
-      content: '';
-      display: block;
-      width: 40px;
-      height: 2px;
-      background: #1a1a2e;
-    }
-
-    /* GOSPEL STEPS GRID */
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      max-width: 1100px;
-      margin: 2rem auto 3rem;
-      padding: 0 2rem;
-    }
-
-    .step-card {
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      overflow: hidden;
-      background: #fff;
-    }
-
-    .step-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .step-card .step-body {
-      padding: 1.25rem 1.25rem 1.5rem;
-    }
-
-    .step-card h3 {
-      font-size: 0.85rem;
-      font-family: Arial, sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #1a1a2e;
-      margin-bottom: 0.75rem;
-      border-bottom: 1px solid #eee;
-      padding-bottom: 0.6rem;
-    }
-
-    .step-card p {
-      font-size: 0.95rem;
-      line-height: 1.75;
-      color: #444;
-      font-style: italic;
-    }
-
-    .step-card .verse-ref {
-      font-style: normal;
-      color: #888;
-      font-size: 0.85rem;
-      margin-top: 0.5rem;
-      display: block;
-    }
-
-    /* ABOUT + SUBSCRIBE */
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      max-width: 1100px;
-      margin: 0 auto 3rem;
-      padding: 0 2rem;
-    }
-
-    @media (max-width: 640px) {
-      .two-col { grid-template-columns: 1fr; }
-    }
-
-    .box {
-      background: #f5f5f5;
-      border-radius: 4px;
-      padding: 2rem;
-    }
-
-    .box h2 {
-      font-size: 1.1rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #1a1a2e;
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .box h2::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: #ccc;
-    }
-
-    .box ul {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 1rem;
-    }
-
-    .box ul li {
-      padding: 0.4rem 0;
-      font-size: 0.95rem;
-      color: #444;
-      border-bottom: 1px solid #e5e5e5;
-    }
-
-    .box ul li::before {
-      content: '›  ';
-      color: #1a1a2e;
-      font-weight: bold;
-    }
-
-    .box p {
-      font-size: 0.95rem;
-      line-height: 1.7;
-      color: #444;
-      margin-bottom: 0.75rem;
-    }
-
-    .box a {
-      color: #1a1a2e;
-      font-weight: bold;
-    }
-
-    /* SUBSCRIBE FORM */
-    .subscribe-form {
-      display: flex;
-      gap: 0.5rem;
-      margin-top: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .subscribe-form input[type="email"] {
-      flex: 1;
-      min-width: 160px;
-      padding: 0.6rem 0.9rem;
-      border: 1px solid #ccc;
-      border-radius: 3px;
-      font-size: 0.9rem;
-    }
-
-    .subscribe-form button {
-      background: #1a1a2e;
-      color: #fff;
-      border: none;
-      padding: 0.6rem 1.2rem;
-      border-radius: 3px;
-      font-size: 0.9rem;
-      cursor: pointer;
-      font-family: Arial, sans-serif;
-      letter-spacing: 0.05em;
-    }
-
-    .subscribe-form button:hover {
-      background: #2d2d50;
-    }
-
-    /* FOOTER */
-    footer {
-      background: #1a1a2e;
-      color: #888;
-      text-align: center;
-      padding: 1.5rem 1rem;
-      font-family: Arial, sans-serif;
-      font-size: 0.8rem;
-      letter-spacing: 0.04em;
-    }
-
-    /* RESPONSIVE NAV */
-    @media (max-width: 760px) {
-      nav { flex-direction: column; align-items: flex-start; }
-      nav ul { flex-direction: column; width: 100%; }
-      nav ul li a { padding: 0.7rem 0.5rem; border-bottom: 1px solid #2d2d50; }
-    }
-  </style>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>A Witness Unto All Nations</title>
+<link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-  <nav>
-    <div class="logo">
-      <img src="https://img1.wsimg.com/isteam/ip/938f4f15-6225-4fa2-b4bc-9f1bc4df76b2/LOGOCAP.PNG/:/rs=h:200,cg:true,m/qt=q:100/ll" alt="A Witness Unto All Nations" />
+<!-- COOKIE BANNER -->
+<div id="cookie-banner" class="cookie-banner">
+  <div class="cookie-inner">
+    <strong>This website uses cookies.</strong>
+    <p>We use cookies to analyze website traffic and optimize your website experience. By accepting our use of cookies, your data will be aggregated with all other user data.</p>
+    <button onclick="document.getElementById('cookie-banner').style.display='none'">Accept</button>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="https://img1.wsimg.com/isteam/ip/938f4f15-6225-4fa2-b4bc-9f1bc4df76b2/LOGOCAP.PNG/:/rs=h:200,cg:true,m/qt=q:100/ll" alt="A Witness Unto All Nations"/>
+  </a>
+  <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="the-gospel.html">The Gospel</a></li>
+    <li><a href="what-does-the-bible-say.html">What Does The Bible Say?</a></li>
+    <li><a href="kjv-only.html">KJV Only</a></li>
+    <li><a href="soul-winning.html">Soul Winning</a></li>
+    <li><a href="contact-us.html">Contact Us</a></li>
+  </ul>
+</nav>
+
+<!-- HERO BANNER -->
+<div class="hero-banner">
+  <p class="hero-sub">Gospel Salvation Guide: Your Path to Eternal Life</p>
+  <p class="hero-desc">The gospel is a powerful message that offers salvation to all who believe. Engaging in soul winning efforts is essential to share this message and help others understand the importance of faith in their journey towards eternal life.</p>
+</div>
+
+<!-- SECTION TITLE -->
+<div class="section-heading">
+  <h1>THE GOSPEL OF YOUR SALVATION</h1>
+  <div class="heading-rule"></div>
+</div>
+
+<!-- GOSPEL STEPS -->
+<div class="cards-grid">
+
+  <div class="step-card">
+    <img src="https://img1.wsimg.com/isteam/ip/938f4f15-6225-4fa2-b4bc-9f1bc4df76b2/blob.png/:/cr=t:33.33%25,l:0%25,w:100%25,h:33.33%25/rs=w:388,h:194,cg:true" alt="Mountains across calm water"/>
+    <div class="step-body">
+      <h3>1 — Admit You Are A Sinner</h3>
+      <p><em>For all have sinned, and come short of the glory of God;</em></p>
+      <p class="verse-ref">~ Romans 3:23 KJV</p>
     </div>
+  </div>
+
+  <div class="step-card">
+    <img src="https://img1.wsimg.com/isteam/ip/938f4f15-6225-4fa2-b4bc-9f1bc4df76b2/cullan-smith-BdTtvBRhOng-unsplash.jpg/:/cr=t:12.5%25,l:0%25,w:100%25,h:75%25/rs=w:388,h:194,cg:true" alt="Flames"/>
+    <div class="step-body">
+      <h3>2 — Realize The Penalty For Sin</h3>
+      <p><em>For the wages of sin is death; but the gift of God is eternal life through Jesus Christ our Lord.</em></p>
+      <p class="verse-ref">~ Romans 6:23 KJV</p>
+    </div>
+  </div>
+
+  <div class="step-card">
+    <img src="https://img1.wsimg.com/isteam/ip/938f4f15-6225-4fa2-b4bc-9f1bc4df76b2/eberhard-grossgasteiger-CytHrRFp2wU-unsplash-0001.jpg/:/cr=t:33.34%25,l:0%25,w:100%25,h:33.32%25/rs=w:388,h:194,cg:true" alt="Cross on mountain at sunset"/>
+    <div class="step-body">
+      <h3>3 — Believe Jesus Died, Was Buried, And Rose Again For You</h3>
+      <p><em>Christ died for our sins according to the scriptures; And that he was buried, and that he rose again the third day according to the scriptures:</em></p>
+      <p class="verse-ref">~ 1 Corinthians 15:3-4 KJV</p>
+    </div>
+  </div>
+
+  <div class="step-card">
+    <img src="https://img1.wsimg.com/isteam/ip/938f4f15-6225-4fa2-b4bc-9f1bc4df76b2/patrick-fore-b_SHPU5M3nk-unsplash.jpg/:/cr=t:12.51%25,l:0%25,w:100%25,h:74.99%25/rs=w:388,h:194,cg:true" alt="Hands in prayer over Bible"/>
+    <div class="step-body">
+      <h3>4 — Understand That Salvation Is By Faith Alone</h3>
+      <p><em>For by grace are ye saved through faith; and that not of yourselves: it is the gift of God: Not of works, lest any man should boast.</em></p>
+      <p class="verse-ref">~ Ephesians 2:8-9 KJV</p>
+    </div>
+  </div>
+
+  <div class="step-card">
+    <img src="https://img1.wsimg.com/isteam/ip/938f4f15-6225-4fa2-b4bc-9f1bc4df76b2/phil-hearing-ecNd_CBT4Ps-unsplash.jpg/:/cr=t:12.53%25,l:0%25,w:100%25,h:74.94%25/rs=w:388,h:194,cg:true" alt="One Way sign"/>
+    <div class="step-body">
+      <h3>5 — Trust Christ Alone As Your Savior, Not Your Behavior</h3>
+      <p><em>Jesus saith unto him, I am the way, the truth, and the life: no man cometh unto the Father, but by me.</em></p>
+      <p class="verse-ref">~ John 14:6 KJV</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- SUBSCRIBE + ABOUT -->
+<div class="section-heading">
+  <h2>Gospel Salvation Guide</h2>
+  <div class="heading-rule"></div>
+</div>
+
+<div class="two-col-section">
+
+  <div class="info-box">
+    <h3>Subscribe</h3>
+    <p>Sign up to receive additional information.</p>
+    <div class="subscribe-row">
+      <input type="email" placeholder="Email Address"/>
+      <button type="button">Sign up</button>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <h3>About Us</h3>
+    <p>This website exists as a guide to your salvation.</p>
     <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">The Gospel</a></li>
-      <li><a href="#">What Does The Bible Say?</a></li>
-      <li><a href="#">KJV Only</a></li>
-      <li><a href="#">Soul Winning</a></li>
-      <li><a href="#">Contact Us</a></li>
+      <li>What is the Gospel?</li>
+      <li>Which Bible should I use?</li>
+      <li>What does the Bible say?</li>
+      <li>What is Soul Winning?</li>
     </ul>
-  </nav>
-
-  <div class="hero">
-    <h1>Gospel Salvation Guide: Your Path to Eternal Life</h1>
-    <p>The gospel is a powerful message that offers salvation to all who believe. Engaging in soul winning efforts is essential to share this message and help others understand the importance of faith in their journey towards eternal life.</p>
+    <p>If you have additional questions, please use the contact us button and we will assist in any way we can.</p>
+    <p>Please check out our YouTube channel "A Witness Unto All Nations." <a href="https://www.youtube.com/channel/UC5e4q0wi44tud27rAEUvfZw" target="_blank">Click Here</a></p>
   </div>
 
-  <div class="section-title">
-    <h2>The Gospel of Your Salvation</h2>
-  </div>
+</div>
 
-  <div class="steps-grid">
-
-    <div class="step-card">
-      <img src="https://img1.wsimg.com/isteam/ip/938f4f15-6225-4fa2-b4bc-9f1bc4df76b2/blob.png/:/cr=t:33.33%25,l:0%25,w:100%25,h:33.33%25/rs=w:388,h:194,cg:true" alt="Mountains across calm water" />
-      <div class="step-body">
-        <h3>1 — Admit You Are A Sinner</h3>
-        <p>For all have sinned, and come short of the glory of God;</p>
-        <span class="verse-ref">~ Romans 3:23 KJV</span>
-      </div>
-    </div>
-
-    <div class="step-card">
-      <img src="https://img1.wsimg.com/isteam/ip/938f4f15-6225-4fa2-b4bc-9f1bc4df76b2/cullan-smith-BdTtvBRhOng-unsplash.jpg/:/cr=t:12.5%25,l:0%25,w:100%25,h:75%25/rs=w:388,h:194,cg:true" alt="Flames" />
-      <div class="step-body">
-        <h3>2 — Realize The Penalty For Sin</h3>
-        <p>For the wages of sin is death; but the gift of God is eternal life through Jesus Christ our Lord.</p>
-        <span class="verse-ref">~ Romans 6:23 KJV</span>
-      </div>
-    </div>
-
-    <div class="step-card">
-      <img src="https://img1.wsimg.com/isteam/ip/938f4f15-6225-4fa2-b4bc-9f1bc4df76b2/eberhard-grossgasteiger-CytHrRFp2wU-unsplash-0001.jpg/:/cr=t:33.34%25,l:0%25,w:100%25,h:33.32%25/rs=w:388,h:194,cg:true" alt="Cross on mountain at sunset" />
-      <div class="step-body">
-        <h3>3 — Believe Jesus Died, Was Buried, And Rose Again For You</h3>
-        <p>Christ died for our sins according to the scriptures; And that he was buried, and that he rose again the third day according to the scriptures:</p>
-        <span class="verse-ref">~ 1 Corinthians 15:3-4 KJV</span>
-      </div>
-    </div>
-
-    <div class="step-card">
-      <img src="https://img1.wsimg.com/isteam/ip/938f4f15-6225-4fa2-b4bc-9f1bc4df76b2/patrick-fore-b_SHPU5M3nk-unsplash.jpg/:/cr=t:12.51%25,l:0%25,w:100%25,h:74.99%25/rs=w:388,h:194,cg:true" alt="Hands in prayer over Bible" />
-      <div class="step-body">
-        <h3>4 — Understand That Salvation Is By Faith Alone</h3>
-        <p>For by grace are ye saved through faith; and that not of yourselves: it is the gift of God: Not of works, lest any man should boast.</p>
-        <span class="verse-ref">~ Ephesians 2:8-9 KJV</span>
-      </div>
-    </div>
-
-    <div class="step-card">
-      <img src="https://img1.wsimg.com/isteam/ip/938f4f15-6225-4fa2-b4bc-9f1bc4df76b2/phil-hearing-ecNd_CBT4Ps-unsplash.jpg/:/cr=t:12.53%25,l:0%25,w:100%25,h:74.94%25/rs=w:388,h:194,cg:true" alt="One Way sign" />
-      <div class="step-body">
-        <h3>5 — Trust Christ Alone As Your Savior, Not Your Behavior</h3>
-        <p>Jesus saith unto him, I am the way, the truth, and the life: no man cometh unto the Father, but by me.</p>
-        <span class="verse-ref">~ John 14:6 KJV</span>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="two-col">
-
-    <div class="box">
-      <h2>Subscribe</h2>
-      <p>Sign up to receive additional information.</p>
-      <div class="subscribe-form">
-        <input type="email" placeholder="Email Address" />
-        <button type="button">Sign Up</button>
-      </div>
-    </div>
-
-    <div class="box">
-      <h2>About Us</h2>
-      <p>This website exists as a guide to your salvation.</p>
-      <ul>
-        <li>What is the Gospel?</li>
-        <li>Which Bible should I use?</li>
-        <li>What does the Bible say?</li>
-        <li>What is Soul Winning?</li>
-      </ul>
-      <p>If you have additional questions, please use the contact us button and we will assist in any way we can.</p>
-      <p>Please check out our YouTube channel "A Witness Unto All Nations." <a href="https://www.youtube.com/channel/UC5e4q0wi44tud27rAEUvfZw" target="_blank">Click Here</a></p>
-    </div>
-
-  </div>
-
-  <footer>
-    Copyright &copy; 2026 A WITNESS UNTO ALL NATIONS &mdash; All Rights Reserved.
-  </footer>
+<!-- FOOTER -->
+<footer>
+  <p>Copyright &copy; 2026 A WITNESS UNTO ALL NATIONS - All Rights Reserved.</p>
+</footer>
 
 </body>
 </html>

@@ -1,0 +1,641 @@
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  color: #333;
+  background: #fff;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+/* ===== NAV ===== */
+nav {
+  background: #1b1b2e;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.nav-logo img {
+  height: 65px;
+  width: auto;
+  display: block;
+  padding: 6px 0;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  display: block;
+  color: #c9c9d8;
+  font-family: 'Arial', sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 1.2rem 1rem;
+  transition: background 0.2s, color 0.2s;
+  border-bottom: 3px solid transparent;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  color: #fff;
+  background: rgba(255,255,255,0.07);
+  border-bottom-color: #c8a96e;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+/* ===== HERO BANNER (home page) ===== */
+.hero-banner {
+  background: #1b1b2e;
+  color: #fff;
+  text-align: center;
+  padding: 4.5rem 2rem 3.5rem;
+  border-bottom: 4px solid #c8a96e;
+}
+
+.hero-sub {
+  font-family: 'Arial', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #c8a96e;
+  margin-bottom: 1.2rem;
+}
+
+.hero-desc {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  color: #ccc;
+  line-height: 1.85;
+}
+
+/* ===== PAGE HERO IMAGE ===== */
+.page-hero-img {
+  width: 100%;
+  max-height: 380px;
+  overflow: hidden;
+}
+
+.page-hero-img img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ===== SECTION HEADINGS ===== */
+.section-heading {
+  text-align: center;
+  padding: 3rem 1rem 1.5rem;
+}
+
+.section-heading h1,
+.section-heading h2 {
+  display: inline-block;
+  font-family: 'Arial', sans-serif;
+  font-size: 1.35rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #1b1b2e;
+  padding-bottom: 0.5rem;
+}
+
+.heading-rule {
+  width: 80px;
+  height: 3px;
+  background: #c8a96e;
+  margin: 0.6rem auto 0;
+  border-radius: 2px;
+}
+
+/* ===== HOME CARDS GRID ===== */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 1.5rem;
+  max-width: 1150px;
+  margin: 0 auto 3rem;
+  padding: 0 1.5rem;
+}
+
+.step-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.step-card:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  transform: translateY(-2px);
+}
+
+.step-card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+
+.step-body {
+  padding: 1.25rem 1.4rem 1.5rem;
+}
+
+.step-body h3 {
+  font-family: 'Arial', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #1b1b2e;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid #c8a96e;
+}
+
+.step-body p {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.75;
+  font-style: italic;
+}
+
+.verse-ref {
+  font-style: normal !important;
+  font-family: 'Arial', sans-serif;
+  font-size: 0.82rem;
+  color: #888;
+  margin-top: 0.6rem;
+  display: block;
+}
+
+/* ===== SUBSCRIBE + ABOUT TWO-COL ===== */
+.two-col-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto 4rem;
+  padding: 0 1.5rem;
+}
+
+.info-box {
+  background: #f7f6f2;
+  border: 1px solid #e5e2d8;
+  border-top: 4px solid #c8a96e;
+  border-radius: 3px;
+  padding: 2rem;
+}
+
+.info-box h3 {
+  font-family: 'Arial', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #1b1b2e;
+  margin-bottom: 1rem;
+}
+
+.info-box p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 0.75rem;
+}
+
+.info-box ul {
+  list-style: none;
+  margin: 0.5rem 0 1rem;
+  padding: 0;
+}
+
+.info-box ul li {
+  padding: 0.35rem 0;
+  font-size: 0.95rem;
+  color: #555;
+  border-bottom: 1px solid #e5e2d8;
+}
+
+.info-box ul li::before {
+  content: '› ';
+  color: #c8a96e;
+  font-weight: bold;
+}
+
+.info-box a {
+  color: #1b1b2e;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.subscribe-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.subscribe-row input[type="email"] {
+  flex: 1;
+  min-width: 150px;
+  padding: 0.65rem 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 0.9rem;
+  font-family: Georgia, serif;
+}
+
+.subscribe-row button {
+  background: #1b1b2e;
+  color: #fff;
+  border: none;
+  padding: 0.65rem 1.3rem;
+  border-radius: 3px;
+  font-family: 'Arial', sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.subscribe-row button:hover { background: #c8a96e; }
+
+/* ===== ACCORDION CARDS (Gospel / Bible pages) ===== */
+.accordion-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  max-width: 1150px;
+  margin: 0 auto 4rem;
+  padding: 0 1.5rem;
+}
+
+.accordion-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-top: 4px solid #1b1b2e;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.accordion-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.accordion-body {
+  padding: 1.3rem 1.4rem 1.4rem;
+}
+
+.accordion-body h3 {
+  font-family: 'Arial', sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #1b1b2e;
+  margin-bottom: 0.9rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid #c8a96e;
+}
+
+.accordion-body p {
+  font-size: 0.93rem;
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 0.6rem;
+}
+
+.accordion-body em { font-style: italic; color: #555; }
+
+.show-more-btn {
+  background: none;
+  border: 1px solid #1b1b2e;
+  color: #1b1b2e;
+  padding: 0.4rem 1rem;
+  font-family: 'Arial', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 0.75rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.show-more-btn:hover {
+  background: #1b1b2e;
+  color: #fff;
+}
+
+/* ===== CONTENT BLOCK (KJV, Soul Winning, Contact) ===== */
+.content-block {
+  max-width: 860px;
+  margin: 0 auto 4rem;
+  padding: 0 1.5rem;
+}
+
+.content-block h3 {
+  font-family: 'Arial', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #1b1b2e;
+  margin: 1.5rem 0 0.75rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid #c8a96e;
+}
+
+.content-block p {
+  font-size: 0.97rem;
+  color: #444;
+  line-height: 1.85;
+  margin-bottom: 1rem;
+}
+
+/* ===== KJV COMPARISON CHART ===== */
+.kjv-chart {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.kjv-col { border: 1px solid #ddd; border-radius: 3px; overflow: hidden; }
+
+.kjv-header {
+  background: #1b1b2e;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.75rem 1rem;
+  text-align: center;
+}
+
+.kjv-col-right .kjv-header { background: #666; }
+
+.kjv-item {
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  color: #444;
+  border-bottom: 1px solid #eee;
+}
+
+.kjv-result {
+  font-family: 'Arial', sans-serif;
+  font-size: 0.85rem;
+  font-weight: bold;
+  padding: 0.75rem 1rem;
+  text-align: center;
+}
+
+.kjv-result.good { background: #e8f4e8; color: #2d6a2d; }
+.kjv-result.bad { background: #f4e8e8; color: #6a2d2d; }
+
+/* ===== CTA BUTTON ===== */
+.cta-btn {
+  display: inline-block;
+  background: #1b1b2e;
+  color: #fff;
+  padding: 0.75rem 2rem;
+  font-family: 'Arial', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin: 0.5rem 0.5rem 0.5rem 0;
+  border: none;
+  text-decoration: none;
+}
+
+.cta-btn:hover { background: #c8a96e; }
+
+.cta-btn-outline {
+  background: transparent;
+  color: #1b1b2e;
+  border: 1px solid #1b1b2e;
+}
+
+.cta-btn-outline:hover { background: #1b1b2e; color: #fff; }
+
+/* ===== SOUL WINNING IMG ===== */
+.soul-winning-img {
+  margin: 2rem 0;
+  max-width: 400px;
+}
+
+.soul-winning-img img {
+  width: 100%;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+}
+
+/* ===== CONTACT FORM ===== */
+.contact-block { max-width: 680px; }
+
+.contact-verse {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.85;
+  margin-bottom: 2rem;
+  padding: 1rem 1.5rem;
+  border-left: 4px solid #c8a96e;
+  background: #faf9f5;
+}
+
+.contact-form-wrap { margin-top: 1.5rem; }
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  font-family: 'Arial', sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #1b1b2e;
+  margin-bottom: 0.4rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 0.95rem;
+  font-family: Georgia, serif;
+  color: #333;
+  background: #fff;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #1b1b2e;
+}
+
+.form-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
+
+/* ===== SOCIAL LINKS ===== */
+.social-links { margin-top: 1rem; }
+
+.social-btn {
+  display: inline-block;
+  padding: 0.65rem 1.5rem;
+  font-family: 'Arial', sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 3px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+  margin-right: 0.5rem;
+}
+
+.social-btn.youtube { background: #cc0000; color: #fff; }
+.social-btn:hover { opacity: 0.85; }
+
+/* ===== FOOTER ===== */
+footer {
+  background: #1b1b2e;
+  color: #888;
+  text-align: center;
+  padding: 1.75rem 1rem;
+  font-family: 'Arial', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-top: 3px solid #c8a96e;
+}
+
+/* ===== COOKIE BANNER ===== */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #1b1b2e;
+  color: #ccc;
+  z-index: 9999;
+  border-top: 3px solid #c8a96e;
+}
+
+.cookie-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.cookie-inner strong {
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.cookie-inner p {
+  font-size: 0.85rem;
+  flex: 1;
+  min-width: 200px;
+  color: #aaa;
+}
+
+.cookie-inner button {
+  background: #c8a96e;
+  color: #1b1b2e;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  font-family: 'Arial', sans-serif;
+  font-size: 0.82rem;
+  font-weight: bold;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 3px;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.cookie-inner button:hover { background: #e0c080; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 720px) {
+  .nav-toggle { display: block; }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #1b1b2e;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    border-top: 1px solid #2d2d4e;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+
+  .nav-links.open { display: flex; }
+
+  .nav-links li a {
+    padding: 0.9rem 1.5rem;
+    border-bottom: 1px solid #2d2d4e;
+    border-left: 4px solid transparent;
+  }
+
+  .nav-links li a:hover,
+  .nav-links li a.active {
+    border-left-color: #c8a96e;
+    background: rgba(255,255,255,0.05);
+  }
+
+  .two-col-section { grid-template-columns: 1fr; }
+
+  .kjv-chart { grid-template-columns: 1fr; }
+
+  .hero-banner { padding: 3rem 1.25rem 2.5rem; }
+
+  .cards-grid { grid-template-columns: 1fr; }
+
+  .accordion-grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Contact Us — A Witness Unto All Nations</title>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<div id="cookie-banner" class="cookie-banner">
+  <div class="cookie-inner">
+    <strong>This website uses cookies.</strong>
+    <p>We use cookies to analyze website traffic and optimize your website experience. By accepting our use of cookies, your data will be aggregated with all other user data.</p>
+    <button onclick="document.getElementById('cookie-banner').style.display='none'">Accept</button>
+  </div>
+</div>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="https://img1.wsimg.com/isteam/ip/938f4f15-6225-4fa2-b4bc-9f1bc4df76b2/LOGOCAP.PNG/:/rs=h:105,cg:true,m/qt=q:100/ll" alt="A Witness Unto All Nations"/>
+  </a>
+  <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="the-gospel.html">The Gospel</a></li>
+    <li><a href="what-does-the-bible-say.html">What Does The Bible Say?</a></li>
+    <li><a href="kjv-only.html">KJV Only</a></li>
+    <li><a href="soul-winning.html">Soul Winning</a></li>
+    <li><a href="contact-us.html" class="active">Contact Us</a></li>
+  </ul>
+</nav>
+
+<div class="section-heading">
+  <h1>Contact Us</h1>
+  <div class="heading-rule"></div>
+</div>
+
+<div class="content-block contact-block">
+  <p class="contact-verse"><em>Howbeit when he, the Spirit of truth, is come, he will guide you into all truth: for he shall not speak of himself; but whatsoever he shall hear, that shall he speak: and he will shew you things to come. ~ John 16:13 KJV</em></p>
+
+  <h3>For additional resources or guidance:</h3>
+
+  <div class="contact-form-wrap">
+    <form onsubmit="handleSubmit(event)">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your name"/>
+      </div>
+      <div class="form-group">
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" placeholder="Your email" required/>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Your message..."></textarea>
+      </div>
+      <div class="form-actions">
+        <button type="submit" class="cta-btn">Send</button>
+        <button type="reset" class="cta-btn cta-btn-outline">Cancel</button>
+      </div>
+      <div id="form-success" style="display:none; color:#2d6a2d; margin-top:1rem; font-style:italic;">Thank you! Your message has been sent.</div>
+    </form>
+  </div>
+
+  <div class="section-heading" style="margin-top:2rem;">
+    <h2>Follow Us On Social Media</h2>
+    <div class="heading-rule"></div>
+  </div>
+  <div class="social-links">
+    <a href="https://www.youtube.com/channel/UC5e4q0wi44tud27rAEUvfZw" target="_blank" class="social-btn youtube">YouTube</a>
+  </div>
+</div>
+
+<footer>
+  <p>Copyright &copy; 2026 A WITNESS UNTO ALL NATIONS - All Rights Reserved.</p>
+</footer>
+
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  document.getElementById('form-success').style.display = 'block';
+  e.target.reset();
+}
+</script>
+</body>
+</html>
