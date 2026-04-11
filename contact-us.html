@@ -4,14 +4,18 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Contact Us — A Witness Unto All Nations</title>
+<meta name="description" content="Contact A Witness Unto All Nations for additional resources, guidance, or questions about the Gospel of Jesus Christ and salvation."/>
+<meta property="og:title" content="Contact Us — A Witness Unto All Nations"/>
+<meta property="og:url" content="https://awitnessuntoallnations.com/contact-us"/>
+<link rel="canonical" href="https://awitnessuntoallnations.com/contact-us"/>
 <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
 <div id="cookie-banner" class="cookie-banner">
   <div class="cookie-inner">
-    <strong>This website uses cookies.</strong>
-    <p>We use cookies to analyze website traffic and optimize your website experience. By accepting our use of cookies, your data will be aggregated with all other user data.</p>
+    <div><strong>This website uses cookies.</strong>
+    <p>We use cookies to analyze website traffic and optimize your website experience. By accepting our use of cookies, your data will be aggregated with all other user data.</p></div>
     <button onclick="document.getElementById('cookie-banner').style.display='none'">Accept</button>
   </div>
 </div>
@@ -41,8 +45,11 @@
 
   <h3>For additional resources or guidance:</h3>
 
+  <!-- FORMSPREE CONTACT FORM -->
+  <!-- IMPORTANT: Replace YOUR_FORMSPREE_ID below with your actual Formspree form ID -->
+  <!-- Steps: 1) Go to formspree.io  2) Sign up free  3) Create a new form  4) Copy your form ID and paste it below -->
   <div class="contact-form-wrap">
-    <form onsubmit="handleSubmit(event)">
+    <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
       <div class="form-group">
         <label for="name">Name</label>
         <input type="text" id="name" name="name" placeholder="Your name"/>
@@ -57,15 +64,14 @@
       </div>
       <div class="form-actions">
         <button type="submit" class="cta-btn">Send</button>
-        <button type="reset" class="cta-btn cta-btn-outline">Cancel</button>
+        <button type="reset" class="cta-btn">Cancel</button>
       </div>
-      <div id="form-success" style="display:none; color:#2d6a2d; margin-top:1rem; font-style:italic;">Thank you! Your message has been sent.</div>
     </form>
   </div>
 
-  <div class="section-heading" style="margin-top:2rem;">
+  <div class="section-heading" style="text-align:left; padding: 2rem 0 1rem;">
     <h2>Follow Us On Social Media</h2>
-    <div class="heading-rule"></div>
+    <div class="heading-rule" style="margin:0.6rem 0 0;"></div>
   </div>
   <div class="social-links">
     <a href="https://www.youtube.com/channel/UC5e4q0wi44tud27rAEUvfZw" target="_blank" class="social-btn youtube">YouTube</a>
@@ -76,12 +82,5 @@
   <p>Copyright &copy; 2026 A WITNESS UNTO ALL NATIONS - All Rights Reserved.</p>
 </footer>
 
-<script>
-function handleSubmit(e) {
-  e.preventDefault();
-  document.getElementById('form-success').style.display = 'block';
-  e.target.reset();
-}
-</script>
 </body>
 </html>
