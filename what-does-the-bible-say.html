@@ -17,7 +17,7 @@
   <div class="cookie-inner">
     <div><strong>This website uses cookies.</strong>
     <p>We use cookies to analyze website traffic and optimize your website experience. By accepting our use of cookies, your data will be aggregated with all other user data.</p></div>
-    <button onclick="document.getElementById('cookie-banner').style.display='none'">Accept</button>
+    <button onclick="acceptCookies()">Accept</button>
   </div>
 </div>
 
@@ -357,6 +357,15 @@ function toggleAccordion(btn) {
     if (preview) preview.style.display = 'block';
     btn.textContent = 'Show More';
   }
+}
+</script>
+<script>
+function acceptCookies() {
+  localStorage.setItem("cookiesAccepted", "true");
+  document.getElementById("cookie-banner").style.display = "none";
+}
+if (localStorage.getItem("cookiesAccepted") === "true") {
+  document.getElementById("cookie-banner").style.display = "none";
 }
 </script>
 </body>
