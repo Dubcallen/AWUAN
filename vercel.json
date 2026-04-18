@@ -1,3 +1,15 @@
 {
-  "cleanUrls": true
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/sinners-prayer", "destination": "/sinners-prayer.html" },
+    { "source": "/how-to-get-saved", "destination": "/how-to-get-saved.html" },
+    { "source": "/faq", "destination": "/faq.html" },
+    { "source": "/kjv-vs-other-bibles", "destination": "/kjv-vs-other-bibles.html" },
+    { "source": "/how-to-witness", "destination": "/how-to-witness.html" },
+    { "source": "/the-gospel", "destination": "/the-gospel.html" },
+    { "source": "/what-does-the-bible-say", "destination": "/what-does-the-bible-say.html" },
+    { "source": "/kjv-only", "destination": "/kjv-only.html" },
+    { "source": "/soul-winning", "destination": "/soul-winning.html" },
+    { "source": "/contact-us", "destination": "/contact-us.html" }
+  ]
 }

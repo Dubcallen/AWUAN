@@ -53,10 +53,30 @@
   <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
-    <li><a href="the-gospel.html">The Gospel</a></li>
-    <li><a href="what-does-the-bible-say.html">What Does The Bible Say?</a></li>
-    <li><a href="kjv-only.html">KJV Only</a></li>
-    <li><a href="soul-winning.html">Soul Winning</a></li>
+    <li class="has-dropdown">
+      <a href="the-gospel.html">The Gospel &#9662;</a>
+      <ul class="dropdown">
+        <li><a href="the-gospel.html">The Gospel</a></li>
+        <li><a href="how-to-get-saved.html">How To Get Saved</a></li>
+        <li><a href="sinners-prayer.html">The Sinner's Prayer</a></li>
+      </ul>
+    </li>
+    <li class="has-dropdown">
+      <a href="what-does-the-bible-say.html">Bible Resources &#9662;</a>
+      <ul class="dropdown">
+        <li><a href="what-does-the-bible-say.html">What Does The Bible Say?</a></li>
+        <li><a href="kjv-only.html">KJV Only</a></li>
+        <li><a href="kjv-vs-other-bibles.html">KJV vs Other Bibles</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </li>
+    <li class="has-dropdown">
+      <a href="soul-winning.html">Outreach &#9662;</a>
+      <ul class="dropdown">
+        <li><a href="soul-winning.html">Soul Winning</a></li>
+        <li><a href="how-to-witness.html">How To Witness</a></li>
+      </ul>
+    </li>
     <li><a href="contact-us.html">Contact Us</a></li>
   </ul>
 </nav>
